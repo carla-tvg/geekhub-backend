@@ -10,4 +10,6 @@ public interface IUsuarioService {
     public void eliminarUsuario(Long id);
     public Usuario obtenerUsuarioPorId(Long id);
     public void editarUsuario(Long idOriginal, String nuevoNombre, String nuevoApellido, String nuevoTelefono, String nuevoCorreo, String nuevoPassword);
+
+    Usuario obtenerUsuarioPorCorreo(String correo);
 }

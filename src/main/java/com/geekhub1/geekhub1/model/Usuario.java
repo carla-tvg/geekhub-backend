@@ -1,9 +1,6 @@
 package com.geekhub1.geekhub1.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,18 +19,22 @@ public class Usuario {
     private String correo;
     private String password;
 
+    @Enumerated(EnumType.STRING)
+    private Rol rol;
+
 
     public Usuario(){
 
     }
 
-    public Usuario(Long id, String nombre, String apellido, String telefono,  String correo, String password ) {
+    public Usuario(Long id, String nombre, String apellido, String telefono,  String correo, String password, Rol rol ) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.password = password;
         this.correo = correo;
+        this.rol = rol;
     }
 
     public Long getId() {
@@ -82,5 +83,13 @@ public class Usuario {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Rol getRol() {
+        return rol;
+    }
+
+    public void setRol(Rol rol) {
+        this.rol = rol;
     }
 }
